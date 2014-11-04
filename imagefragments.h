@@ -1,3 +1,9 @@
+/*
+** Copyright (c) 2014 Jarmo Hautakoski
+**
+** Fractal project
+**  */
+
 #ifndef IMAGEFRAGMENTS_H
 #define IMAGEFRAGMENTS_H
 

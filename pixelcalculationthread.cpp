@@ -1,3 +1,9 @@
+/*
+** Copyright (c) 2014 Jarmo Hautakoski
+**
+** Fractal project
+**  */
+
 #include "pixelcalculationthread.h"
 #include <QDebug>
 #include <complex>

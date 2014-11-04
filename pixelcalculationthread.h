@@ -1,3 +1,9 @@
+/*
+** Copyright (c) 2014 Jarmo Hautakoski
+**
+** Fractal project
+**  */
+
 #ifndef PIXELCALCULATIONTHREAD_H
 #define PIXELCALCULATIONTHREAD_H
 

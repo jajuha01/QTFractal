@@ -1,3 +1,9 @@
+/*
+** Copyright (c) 2014 Jarmo Hautakoski
+**
+** Fractal project
+**  */
+
 #ifndef CUSTOMSCENE_H
 #define CUSTOMSCENE_H
 

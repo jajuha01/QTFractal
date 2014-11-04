@@ -1,3 +1,9 @@
+/*
+** Copyright (c) 2014 Jarmo Hautakoski
+**
+** Fractal project
+**  */
+
 #include "imagefragments.h"
 
 ImageFragments::ImageFragments(PixelCalculationThread* fragment)

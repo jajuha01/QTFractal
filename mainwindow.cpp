@@ -1,3 +1,9 @@
+/*
+** Copyright (c) 2014 Jarmo Hautakoski
+**
+** Fractal project
+**  */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "pixelcalculationthread.h"

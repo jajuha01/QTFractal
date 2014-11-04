@@ -1,3 +1,9 @@
+/*
+** Copyright (c) 2014 Jarmo Hautakoski
+**
+** Fractal project
+**  */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

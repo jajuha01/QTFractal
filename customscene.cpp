@@ -1,3 +1,9 @@
+/*
+** Copyright (c) 2014 Jarmo Hautakoski
+**
+** Fractal project
+**  */
+
 #include "customscene.h"
 #include <QGraphicsSceneMoveEvent>
 #include <QDebug>
