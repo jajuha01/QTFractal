@@ -28,12 +28,12 @@ PixelCalculationThread::PixelCalculationThread(int startx, int starty,int sizeOf
     colorBoost = ColorBoost+1;
     /* Initialize table where calculated data is stored. This is re used in case object is restarted */
     size_of_table = ((size*size));
-    table = (unsigned int *) malloc(sizeof(unsigned int)*size_of_table);
+    table = (unsigned int *) new unsigned int[size_of_table];
 }
 
 PixelCalculationThread::~PixelCalculationThread()
 {
-    free(table);
+    delete[] table;
     disconnect(threadP,SIGNAL(started()),this,SLOT(doCalculation()));
     disconnect(threadP,SIGNAL(finished()),this,SLOT(CalculationDone()));
 }
@@ -59,7 +59,7 @@ unsigned int* PixelCalculationThread::GetCopyofData(int* size_x, int* size_y,int
 {
     unsigned int size_of_table = (sizeX*sizeY);
 
-    unsigned int* newTable = (unsigned int *) malloc(sizeof(unsigned int)*size_of_table);
+    unsigned int* newTable = (unsigned int *) new unsigned int[size_of_table];
     memcpy(newTable,table,(size_of_table*sizeof(unsigned int)));
 
     *size_x = sizeX;

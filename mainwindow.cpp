@@ -31,6 +31,9 @@ MainWindow::MainWindow(QWidget *parent) :
     SetDefaultValues();
     pixmapItem = NULL;
     pixmapItemJulian = NULL;
+    ThreadList = NULL;
+    ThreadObjList = NULL;
+    ThreadsRunning = 0;
     SelectedEffect = MandelProt;
     /* Not used currently
     appTimer = new AppTimer((AppTimerIf*)this);
@@ -234,7 +237,7 @@ void MainWindow::SetDefaultValues()
 
 void MainWindow::CleanThreads()
 {
-    if (ThreadsRunning == 0 && !ThreadList && !ThreadObjList)
+    if (ThreadsRunning == 0 && ThreadList && ThreadObjList)
     {
         for (int i= 0; i < CPUAmount;i++)
         {
@@ -243,8 +246,8 @@ void MainWindow::CleanThreads()
             delete ThreadList[i];
 
         }
-        delete [] ThreadList;
-        delete [] ThreadObjList;
+        delete[] ThreadList;
+        delete[] ThreadObjList;
         ThreadList = NULL;
         ThreadObjList = NULL;
     }

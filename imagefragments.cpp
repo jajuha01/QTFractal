@@ -13,6 +13,6 @@ ImageFragments::ImageFragments(PixelCalculationThread* fragment)
 
 ImageFragments::~ImageFragments()
 {
-    free(table);
+    delete[] table;
 }
 
