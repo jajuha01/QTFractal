@@ -5,7 +5,9 @@
 **  */
 
 #include "pixelcalculationthread.h"
+#ifdef QT_DEBUG
 #include <QDebug>
+#endif
 #include <complex>
 #include <QRgb>
 #include <QObject>
@@ -81,9 +83,9 @@ void PixelCalculationThread::doCalculation()
     unsigned int* cursor = table;
     int iterations = 0;
     int r,g,b = 0;
-
+#ifdef QT_DEBUG
     qDebug() << "Start calculation: " + QString::number(clusterID);
-
+#endif
     /* Check  that we don't go over window boundaries */
     sizeX = size;
     sizeY = size;
@@ -143,7 +145,9 @@ void PixelCalculationThread::doCalculation()
 
 void PixelCalculationThread::CalculationDone()
 {
+#ifdef QT_DEBUG
     qDebug() << "Calculation done: " + QString::number(clusterID);
+#endif
     emit CalculationDone(ThreadId);
 }
 

@@ -25,8 +25,6 @@ void CustomScene::MouseCurrentPos(qreal *x, qreal *y)
 void CustomScene::wheelEvent(QGraphicsSceneWheelEvent *mouseEvent)
 {
     int movement = mouseEvent->delta();
-
-    qDebug() << QString::number(movement);
     if (movement > 0 )
     {
         window->ChangeSoomLevel(0.8);

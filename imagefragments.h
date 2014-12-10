@@ -7,16 +7,15 @@
 #ifndef IMAGEFRAGMENTS_H
 #define IMAGEFRAGMENTS_H
 
-#include <QImage>
 #include <pixelcalculationthread.h>
 
-
-class ImageFragments : public QObject
+class ImageFragments
 {
-    Q_OBJECT
 public:
+    ImageFragments();
     ImageFragments(PixelCalculationThread* fragment);
     ~ImageFragments();
+    void operator =(const ImageFragments & a);
     void CopyDataToBuffer(QImage);
     int segmentId;
     unsigned int* table;

@@ -8,7 +8,9 @@
 #include "ui_mainwindow.h"
 #include "pixelcalculationthread.h"
 #include <QImage>
+#ifdef QT_DEBUG
 #include <QDebug>
+#endif
 #include <customscene.h>
 #include <QGraphicsPixmapItem>
 #include "apptimer.h"
@@ -70,7 +72,6 @@ void MainWindow::RenderNewImage(bool julian_Set)
         delete fragmentTable.at(0);
         fragmentTable.removeAt(0);
     }
-
 
     pixmap.convertFromImage(*image);
     delete image;
@@ -308,8 +309,9 @@ bool MainWindow::JulianPreviewActive()
 
 void MainWindow::ThreadCompleted(int thread_id)
 {
+    ImageFragments* data  = new ImageFragments(ThreadObjList[thread_id]);
     /* Copy data to list and store needed info to ImageFragments */
-    fragmentTable.append(new ImageFragments(ThreadObjList[thread_id]));
+    fragmentTable.append(data);
     ThreadsRunning--;
     Effect effect = ThreadObjList[thread_id]->GetRenderEffect();
     /* Update progress bar */
@@ -335,7 +337,9 @@ void MainWindow::ThreadCompleted(int thread_id)
     }
     else if (ThreadsRunning == 0)
     {
+#ifdef QT_DEBUG
         qDebug() << "all calculation done";
+#endif
         /* Update progress bar */
         ui->progressBar->setValue(100);
         if (effect == JulianSetEffect)
