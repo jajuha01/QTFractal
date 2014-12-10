@@ -18,10 +18,6 @@ CustomScene::~CustomScene()
 
 }
 
-void CustomScene::MouseCurrentPos(qreal *x, qreal *y)
-{
-}
-
 void CustomScene::wheelEvent(QGraphicsSceneWheelEvent *mouseEvent)
 {
     int movement = mouseEvent->delta();

@@ -15,7 +15,7 @@ public:
     ImageFragments();
     ImageFragments(PixelCalculationThread* fragment);
     ~ImageFragments();
-    void operator =(const ImageFragments & a);
+    ImageFragments& operator =(const ImageFragments & a);
     void CopyDataToBuffer(QImage);
     int segmentId;
     unsigned int* table;

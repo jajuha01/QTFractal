@@ -26,12 +26,12 @@ ImageFragments::~ImageFragments()
     delete[] table;
 }
 
-void ImageFragments::ImageFragments::operator =(const ImageFragments &a)
+ImageFragments& ImageFragments::ImageFragments::operator =(const ImageFragments &a)
 {
     int size = a.sizeY*a.sizeX;
     memcpy(this,&a,sizeof(a));
     table = new unsigned int[size];
     memcpy(table,a.table,size*sizeof(unsigned int));
-    //return *this;
+    return *this;
 }
 
